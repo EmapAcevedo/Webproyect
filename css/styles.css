@@ -6,7 +6,7 @@ header{
     left: 0;
     width: 100%;
 }
-ul {
+ul.nav {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -19,7 +19,7 @@ ul {
     font-weight: bold;
 }
 
-li {
+li.nav {
     float: left;
     border-right: 1px solid #bbb;
 }
@@ -32,7 +32,7 @@ li a {
     text-decoration: none;
 }
 
-.ultli {
+li.ultli {
     border-right: none;
     float:right
 }
@@ -41,13 +41,17 @@ li a:hover:not(.active) {
     background-color: #111;
     color:turquoise;
 }
-.dashli{
+li.dashli{
     width: 33.33%;
 
 }
 
+ul.note li{
+	text-align: left;
+}
 
-.active {
+
+a.active {
     background-color: slateblue;
 }
 
@@ -130,7 +134,7 @@ span.psw {
     background-color: #fefefe;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 40%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */
@@ -202,4 +206,16 @@ span.psw {
 #mamalon2{
     top:0;
      background-color: steelblue;
+}
+
+div.note{
+	width: 500px;
+	height:300px;
+}
+
+a.btn{
+
+	right:5%;
+	bottom: 5%;
+	position: fixed;
 }
