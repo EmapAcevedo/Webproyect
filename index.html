@@ -16,7 +16,7 @@
   <li class="ultli"><a onclick="document.getElementById('id01').style.display='block'">Login</a></li>
 </ul>
 </header>
-<body>
+<body onload="showDivs(1)">
 
 //Pop up modal container Log In
 <div id="id01" class="modal">
@@ -121,6 +121,21 @@
       On time notifications you could manage, delete, edit and create.
       Activities will be easier</p>
     </div>
+  </div>
+</div>
+
+<div class="w3-row-padding w3-blue-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+    <h1 class="w3-center">Slideshows</h1>
+    <div class="w3-content" style="max-width:800px;position:relative">
+
+    <img class="mySlides w3-animate-opacity" src="img/dashboard.png" style="width:100%">
+    <img class="mySlides w3-animate-opacity" src="img/profile.png" style="width:100%">
+    <img class="mySlides w3-animate-opacity" src="img/task.png" style="width:100%">
+    <img class="mySlides w3-animate-opacity" src="img/postit.jpg" style="width:100%">
+
+    <a class="w3-btn-floating w3-hover-dark-grey" style="position:absolute;top:45%;left:0;" onclick="plusDivs(-1)">❮</a>
+    <a class="w3-btn-floating w3-hover-dark-grey" style="position:absolute;top:45%;right:0;" onclick="plusDivs(+1)">❯</a>
   </div>
 </div>
 
