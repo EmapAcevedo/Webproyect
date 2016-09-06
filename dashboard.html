@@ -6,13 +6,13 @@
 <link rel="stylesheet" href="css/styles.css" >
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <script src= "js/scripts.js"></script>
-	<title>Proyecto</title>
+	<title>Workspace</title>
 </head>
 <header>
 <ul class="nav">
-  <li class="nav dashli"><a href="">Dashboard</a></li>
-  <li class="nav dashli"><a href="">Tasks</a></li>
-  <li class="nav dashli"><a href="">Profile</a></li>
+  <li class="nav dashli"><a href="dashboard.html">Dashboard</a></li>
+  <li class="nav dashli"><a href="tasks.html">Tasks</a></li>
+  <li class="nav dashli"><a href="profile.html">Profile</a></li>
 </ul>
 
 </header>
@@ -30,8 +30,61 @@
 </div>
 </div>
 
-<a class="w3-btn-floating-large w3-blue btn"><i class="fa fa-plus">+</i></a>
+<a class="w3-btn-floating-large w3-blue btn" onclick="document.getElementById('id01').style.display='block'"><i class="fa fa-plus">+</i></a>
 
+<div id="id01" class="modal w3-card-6">
+  
+  <form class="modal-content animate" action="dashboard.html">
+  <div class="w3-container">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+     
+    </div>
+  </div>  
+  <div class="w3-container">  
+    <div class="w3-group">
+    <input class="w3-input" type="text" required>
+    <label class="w3-label w3-validate">title</label>
+  </div>
+  <div class="w3-group">
+    <input class="w3-input" type="text" required>
+    <label class="w3-label w3-validate">description</label>
+  </div>
+  <div class="w3-group">
+    <input class="w3-input" type="text" required>
+    <label class="w3-label">date</label>
+  </div>
+
+  <div class="w3-row">
+  <div class="w3-half">
+    <input id="milk" class="w3-check" type="checkbox" checked="checked">
+    <label class="w3-validate">option1</label>
+    <br>
+    <input id="sugar" class="w3-check" type="checkbox">
+    <label class="w3-validate">option2</label>
+    <br>
+    <input id="lemon" class="w3-check" type="checkbox" disabled>
+    <label class="w3-validate">option3 (Disabled)</label>
+    <br><br>
+  </div>
+
+  <div class="w3-half">
+    <input id="male" class="w3-radio" type="radio" name="gender" value="male" checked>
+    <label class="w3-validate">share</label>
+    <br>
+    <input id="female" class="w3-radio" type="radio" name="gender" value="female">
+    <label class="w3-validate">private</label>
+    <br>
+    <input id="unknown" class="w3-radio" type="radio" name="gender" value="" disabled>
+    <label class="w3-validate"> Don't know (Disabled)</label>
+  </div>
+  </div>
+ </div>
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
 
 </body>
 
