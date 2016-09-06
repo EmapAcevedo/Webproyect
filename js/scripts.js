@@ -14,7 +14,7 @@ window.onclick = function(event) {
 
 
 //---------------------------slider--------------------------------------
-
+window.
 var slideIndex = 1;
 
 function plusDivs(n) {
@@ -32,7 +32,7 @@ function showDivs(n) {
   x[slideIndex-1].style.display = "block";
 }
 
-window.setInterval(plusDivs(+1), 2000);
+window.setInterval(plusDivs(+1), 1000);
 
 
 //-------------------Accordions------------------------------------
