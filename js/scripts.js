@@ -32,7 +32,6 @@ function showDivs(n) {
   x[slideIndex-1].style.display = "block";
 }
 
-window.setInterval(plusDivs(+1), 1000);
 
 
 //-------------------Accordions------------------------------------

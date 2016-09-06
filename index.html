@@ -16,7 +16,7 @@
   <li class="ultli"><a onclick="document.getElementById('id01').style.display='block'">Login</a></li>
 </ul>
 </header>
-<body>
+<body onload="showDivs(1)">
 
 //Pop up modal container Log In
 <div id="id01" class="modal">
@@ -80,7 +80,7 @@
 
 <div class="content">
    <!-- Working on it session-->
-  <div class="w3-container w3-content w3-center w3-padding-128" style="max-width:800px">
+  <div class="w3-container w3-content w3-center w3-padding-128" style="max-width:800px" >
     <h1 class="w3-wide">WORKIN' ON IT</h1>
     <p class="w3-opacity"><i>"Helping organize your daily life"</i></p>
     <p class="w3-justify">Workin' on it boards, lists and cards enable you to organize and prioritize your daily activities, 
@@ -89,59 +89,53 @@
                           but keeping it simple like your old fashion agenda and making it user friendly. </p>
   </div>    
 
-<!--<div id="mamalon1" class="w3-container">
-<div class="w3-row">
-  <div class="w3-half w3-center"><img src="img/dog.jpg" class="photo" alt="Dog"></div>
-    <div class="w3-half w3-container"><p><strong>¿Tiene las aplicaciones?</strong> Tenemos aplicaciones para iPhone, iPad, teléfonos, tabletas y relojes Android y Kindle Fire. Es posible que tenga uno de estos dispositivos.
-      jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
-      <strong>¿Tiene las aplicaciones?</strong> Tenemos aplicaciones para iPhone, iPad, teléfonos, tabletas y relojes Android y Kindle Fire. Es posible que tenga uno de estos dispositivos.
-      jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
-      <strong>¿Tiene las aplicaciones?</strong> Tenemos aplicaciones para iPhone, iPad, teléfonos, tabletas y relojes Android y Kindle Fire. Es posible que tenga uno de estos dispositivos.
-      jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
-      <strong>¿Tiene las aplicaciones?</strong> Tenemos aplicaciones para iPhone, iPad, teléfonos, tabletas y relojes Android y Kindle Fire. Es posible que tenga uno de estos dispositivos.
-      jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
-      <strong>¿Tiene las aplicaciones?</strong> Tenemos aplicaciones para iPhone, iPad, teléfonos, tabletas y relojes Android y Kindle Fire. Es posible que tenga uno de estos dispositivos.
-      jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
-      <strong>¿Tiene las aplicaciones?</strong> Tenemos aplicaciones para iPhone, iPad, teléfonos, tabletas y relojes Android y Kindle Fire. Es posible que tenga uno de estos dispositivos.
-      jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
-      </p>
-    </div>
-    </div>
-
-</div>!-->
-
 <!-- First Grid -->
 <div class="w3-row-padding w3-blue w3-padding-64 w3-container">
   <div class="w3-content">
     <div class="w3-twothird">
-      <h1>Lorem Ipsum</h1>
-      <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
-
-      <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <h1>NOT JUST NOTES</h1>
+      <h5 class="w3-padding-32 w3-text-white">Working on it isn't just notes, you can aslo put your activities and task to do for the day, 
+      at the end you can check if you did it or not, also it will notify you if your task is about to end and you haven't do it.</h>
+      <p class="w3-text-black">We try to make people to be more productive, some people have trouble getting their things done and we thing that workin' on it could make people organize them better so they could get their activities faster and easier. Some people say they like to use a phisical agenda and working on it tries to make the experience like your old fashion agenda.</p>
     </div>
 
     <div class="w3-third w3-center">
-      <img src="img/dog.jpg" class="photo" alt="Dog">
+      <img src="img/folder.png" class="folder" alt="folder">
     </div>
   </div>
 </div>
 <!-- Second Grid -->
 <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
   <div class="w3-content">
-    <div class="w3-third w3-center">
-      <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
+    <div class="w3-twothird " >
+     <img src="img/workinonit.png" class="app" alt="folder"></i>
     </div>
 
-    <div class="w3-twothird">
-      <h1>Lorem Ipsum</h1>
-      <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+    <div class="w3-third">
+      <h1>READY FOR YOU</h1>
+      <h5 class="w3-padding-32 w3-text-grey">Easy access to your notes when you need it </h5>
 
-      <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p class="w3-text-black">You could access all your notes all in one place, Workin' on it 
+      will notice you when you have to do your choirs and assigments. 
+
+      On time notifications you could manage, delete, edit and create.
+      Activities will be easier</p>
     </div>
+  </div>
+</div>
+
+<div class="w3-row-padding w3-blue-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+    <h1 class="w3-center">Slideshows</h1>
+    <div class="w3-content" style="max-width:800px;position:relative">
+
+    <img class="mySlides w3-animate-opacity" src="img/dashboard.png" style="width:100%">
+    <img class="mySlides w3-animate-opacity" src="img/profile.png" style="width:100%">
+    <img class="mySlides w3-animate-opacity" src="img/task.png" style="width:100%">
+    <img class="mySlides w3-animate-opacity" src="img/postit.jpg" style="width:100%">
+
+    <a class="w3-btn-floating w3-hover-dark-grey" style="position:absolute;top:45%;left:0;" onclick="plusDivs(-1)">❮</a>
+    <a class="w3-btn-floating w3-hover-dark-grey" style="position:absolute;top:45%;right:0;" onclick="plusDivs(+1)">❯</a>
   </div>
 </div>
 

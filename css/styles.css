@@ -219,3 +219,8 @@ a.btn{
 	bottom: 5%;
 	position: fixed;
 }
+
+h1.w3-wide{
+    font-weight: bold;
+    font-size: 50px;
+}
