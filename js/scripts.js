@@ -14,7 +14,6 @@ window.onclick = function(event) {
 
 
 //---------------------------slider--------------------------------------
-window.
 var slideIndex = 1;
 
 function plusDivs(n) {

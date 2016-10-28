@@ -5,7 +5,7 @@
 <meta charset="ISO-8859-1" />
 <link rel="stylesheet" href="css/styles.css" >
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-<script src= "js/scripts.js"></script>
+
 	<title>Proyecto</title>
 </head>
 <header>
@@ -16,12 +16,12 @@
   <li class="ultli"><a onclick="document.getElementById('id01').style.display='block'">Login</a></li>
 </ul>
 </header>
-<body onload="showDivs(1)">
+<body onload="plusDivs(+1)">
 
 //Pop up modal container Log In
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="dashboard.html">
+  <form class="modal-content animate" action="">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="img/avatarz.png" alt="Avatar" class="avatar">
@@ -29,12 +29,12 @@
 
     <div class="container">
       <label><b>Username</b></label>
-      <input type="text" placeholder="someone@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" name="uname" required>
+      <input type="text" placeholder="someone@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" id="lmail" required>
 
       <label><b>Password</b></label>
-      <input type="password" placeholder="Enter 6 length Password" pattern=".{6,}" name="psw" required>
+      <input type="password" placeholder="Enter 6 length Password" pattern=".{6,}" id="lpsw" required>
         
-      <button type="submit">Login</button>
+      <button type="button" onclick="logargs()">Login</button>
       <input type="checkbox" checked="checked"> Remember me
     </div>
 
@@ -50,7 +50,7 @@
 //Pop up container Sign In
 <div id="id02" class="modal">
   
-  <form class="modal-content animate" action="action_page.php">
+  <form class="modal-content animate" action="">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="img/avatarz.png" alt="Avatar" class="avatar">
@@ -58,18 +58,18 @@
 
     <div class="container">
       <label><b>Name</b></label>
-      <input type="text" placeholder="Enter Someone" name="uname" required>
+      <input type="text" placeholder="Enter Someone" id="uname" required>
 
       <label><b>E-mail</b></label>
-      <input type="text" placeholder="Enter someone@example.com " pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" name="umail" required>
+      <input type="text" placeholder="Enter someone@example.com " pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" id="umail" required>
 
       <label><b>Password</b></label>
-      <input type="password" placeholder="Enter 6 long Password"  pattern=".{6,}" name="psw" required>
+      <input type="password" placeholder="Enter 6 long Password"  pattern=".{6,}" id="psw" required>
 
       <label><b>Repeat Password</b></label>
-      <input type="password" placeholder="Re-enter Password"  pattern=".{6,}" name="psw" required>
+      <input type="password" placeholder="Re-enter Password"  pattern=".{6,}" id="psw2" required>
         
-      <button type="submit">Sign in</button>
+      <button type="button" onclick="signargs()">Sign in</button>
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
@@ -142,9 +142,12 @@
 
 </div>
 
-
+<script src= "js/scripts.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+<script src= "js/login.js"></script>
 </body>
 <footer class="w3-container w3-black w3-padding-16">
   awesome footer
 </footer>
+
 </html>
