@@ -64,10 +64,25 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 				noteDescription = document.getElementById('noteDescription');
 				noteDate = document.getElementById('noteDate');
 
-				noteTitle.innerText = titulo;
+				/*noteTitle.innerText = titulo;
 				noteDescription.innerText = desc;
 				noteDate.innerText = fecha;
-				console.log("este es el noteTitle:"+noteTitle.innerText);
+				console.log("este es el noteTitle:"+noteTitle.innerText);*/
+
+				document.getElementById('Canvas').innerHTML += '<div class="w3-container w3-content w3-left w3-padding-64">'
+																+'<div class="w3-card-4 w3-container note">'
+																    +'<h2 id="noteTitle">'+titulo+'</h2>'
+																    +'<ul class="w3-ul w3-margin-bottom note">'
+																      +'<li id="noteDescription">Description:'+desc +' </li>'
+																     +' <li id="noteDate">Date:'+fecha+'</li>'
+																   +' </ul>'
+																   +' <button type="button" class="cancelbtn" id="btnDelete">Delete</button>'
+																  +'</div>'
+																+'</div>';
+
+
+
+
 			});
 			/*noteTitle = document.getElementById('noteTitle');
 			noteDescription = document.getElementById('noteDescription');
