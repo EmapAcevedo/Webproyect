@@ -5,8 +5,11 @@
 <meta charset="ISO-8859-1" />
 <link rel="stylesheet" href="css/styles.css" >
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-database.js"></script>
 <script src= "js/scripts.js"></script>
-	<title>Workspace</title>
+  <title>Workspace</title>
 </head>
 <header>
 <ul class="nav">
@@ -17,17 +20,40 @@
 
 </header>
 <body class="w3-container">
-<div class="w3-container w3-content w3-center w3-padding-64">
-<div class="w3-card-4 w3-container note">
-<h2>Web project</h2>
-<ul class="w3-ul w3-margin-bottom note">
-  <li>Description: we gotta do the front-end for the web class <br/>
-  	  we also have to do a formal presentation</li>
-  <li>Date: 6/09/2016</li>
-  <li>Some other stuff</li>
-</ul>
-<br>
+<div class="w3-container w3-content w3-right w3-padding-64">
+  <div class="w3-card-4 w3-container note">
+    <h2 id="noteTitle">Web project</h2>
+    <ul class="w3-ul w3-margin-bottom note">
+      <li id="noteDescription">Description: we gotta do the front-end for the web class <br/>
+        we also have to do a formal presentation</li>
+      <li id="noteDate">Date: 6/09/2016</li>
+    </ul>
+    <button type="button" class="cancelbtn" id="btnDelete">Delete</button>
+  </div>
 </div>
+
+<div class="w3-container w3-content w3-right w3-padding-64">
+  <div class="w3-card-4 w3-container note">
+    <h2 id="noteTitle">Web project</h2>
+    <ul class="w3-ul w3-margin-bottom note">
+      <li id="noteDescription">Description: we gotta do the front-end for the web class <br/>
+        we also have to do a formal presentation</li>
+      <li id="noteDate">Date: 6/09/2016</li>
+    </ul>
+    <button type="button" class="cancelbtn" id="btnDelete">Delete</button>
+  </div>
+</div>
+
+<div class="w3-container w3-content w3-right w3-padding-64">
+  <div class="w3-card-4 w3-container note">
+    <h2 id="noteTitle">Web project</h2>
+    <ul class="w3-ul w3-margin-bottom note">
+      <li id="noteDescription">Description: we gotta do the front-end for the web class <br/>
+        we also have to do a formal presentation</li>
+      <li id="noteDate">Date: 6/09/2016</li>
+    </ul>
+    <button type="button" class="cancelbtn" id="btnDelete">Delete</button>
+  </div>
 </div>
 
 <a class="w3-btn-floating-large w3-blue btn" onclick="document.getElementById('id01').style.display='block'"><i class="fa fa-plus">+</i></a>
@@ -43,47 +69,25 @@
   </div>  
   <div class="w3-container">  
     <div class="w3-group">
-    <input class="w3-input" type="text" required>
     <label class="w3-label w3-validate">title</label>
+    <input class="w3-input" type="text" id="uTitle" required>
   </div>
   <div class="w3-group">
-    <input class="w3-input" type="text" required>
     <label class="w3-label w3-validate">description</label>
+    <input class="w3-input" type="text" id="uDescription" required>
   </div>
   <div class="w3-group">
-    <input class="w3-input" type="text" required>
     <label class="w3-label">date</label>
+    <input class="w3-input" type="text" id="uDate" required>
   </div>
 
-  <div class="w3-row">
-  <div class="w3-half">
-    <input id="milk" class="w3-check" type="checkbox" checked="checked">
-    <label class="w3-validate">option1</label>
-    <br>
-    <input id="sugar" class="w3-check" type="checkbox">
-    <label class="w3-validate">option2</label>
-    <br>
-    <input id="lemon" class="w3-check" type="checkbox" disabled>
-    <label class="w3-validate">option3 (Disabled)</label>
-    <br><br>
-  </div>
-
-  <div class="w3-half">
-    <input id="male" class="w3-radio" type="radio" name="gender" value="male" checked>
-    <label class="w3-validate">share</label>
-    <br>
-    <input id="female" class="w3-radio" type="radio" name="gender" value="female">
-    <label class="w3-validate">private</label>
-    <br>
-    <input id="unknown" class="w3-radio" type="radio" name="gender" value="" disabled>
-    <label class="w3-validate"> Don't know (Disabled)</label>
-  </div>
-  </div>
  </div>
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <button type="button" class="signinbtn" id="btnSave">Save</button>
     </div>
   </form>
+  <script type="text/javascript" src="js/tasks.js" ></script>
 </div>
 
 </body>

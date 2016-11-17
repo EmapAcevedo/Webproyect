@@ -5,8 +5,12 @@
 <meta charset="ISO-8859-1" />
 <link rel="stylesheet" href="css/styles.css" >
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<script src= "js/scripts.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-database.js"></script>
 
-	<title>Proyecto</title>
+  <title>Proyecto</title>
 </head>
 <header>
 <ul class="nav">
@@ -21,60 +25,61 @@
 //Pop up modal container Log In
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="">
+  <form class="modal-content animate" action="javascript:login()">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="img/avatarz.png" alt="Avatar" class="avatar">
     </div>
 
-    <div class="container">
-      <label><b>Username</b></label>
-      <input type="text" placeholder="someone@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" id="lmail" required>
+      <div class="container">
+        <label><b>Username</b></label>
+        <input type="text" placeholder="someone@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" id="lmail" required>
 
-      <label><b>Password</b></label>
-      <input type="password" placeholder="Enter 6 length Password" pattern=".{6,}" id="lpsw" required>
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Enter 6 length Password" pattern=".{6,}" id="lpsw" required>
         
-      <button type="button" onclick="logargs()">Login</button>
-      <input type="checkbox" checked="checked"> Remember me
-    </div>
+        <input id="btnSignup" type="submit" value="submit" />
+        <!--<button type="button">Login</button>-->
+        <input type="checkbox" checked="checked"> Remember me
+      </div>
 
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id02').style.display='block'; document.getElementById('id01').style.display='none'" class="signinbtn">Sigin</button>
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('id02').style.display='block'; document.getElementById('id01').style.display='none'" class="signinbtn">Sigin</button>
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
 
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+      </div>
   </form>
 </div>
 
 //Pop up container Sign In
 <div id="id02" class="modal">
   
-  <form class="modal-content animate" action="">
+  <form class="modal-content animate" action="javascript:signin()">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="img/avatarz.png" alt="Avatar" class="avatar">
     </div>
+      <div class="container">
+        <label><b>Name</b></label>
+        <input type="text" placeholder="Enter Someone" id="uname" required>
 
-    <div class="container">
-      <label><b>Name</b></label>
-      <input type="text" placeholder="Enter Someone" id="uname" required>
+        <label><b>E-mail</b></label>
+        <input type="text" placeholder="Enter someone@example.com " pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" id="umail" required>
 
-      <label><b>E-mail</b></label>
-      <input type="text" placeholder="Enter someone@example.com " pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}" id="umail" required>
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Enter 6 long Password"  pattern=".{6,}" id="psw" required>
 
-      <label><b>Password</b></label>
-      <input type="password" placeholder="Enter 6 long Password"  pattern=".{6,}" id="psw" required>
+        <label><b>Repeat Password</b></label>
+        <input type="password" placeholder="Re-enter Password"  pattern=".{6,}" id="psw2" required>
+          
+        <input id="btnSignup" type="submit" value="submit" />
+        <!--<button type="button"">Sign in</button>-->
+      </div>  
 
-      <label><b>Repeat Password</b></label>
-      <input type="password" placeholder="Re-enter Password"  pattern=".{6,}" id="psw2" required>
-        
-      <button type="button" onclick="signargs()">Sign in</button>
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-    <button type="button" onclick="document.getElementById('id01').style.display='block'; document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-    </div>
+      <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='block'; document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+      </div>
   </form>
 </div>
 
@@ -129,22 +134,17 @@
     <h1 class="w3-center">Slideshows</h1>
     <div class="w3-content" style="max-width:800px;position:relative">
 
-    <img class="mySlides w3-animate-opacity" src="img/dashboard.png" style="width:100%">
-    <img class="mySlides w3-animate-opacity" src="img/profile.png" style="width:100%">
-    <img class="mySlides w3-animate-opacity" src="img/task.png" style="width:100%">
-    <img class="mySlides w3-animate-opacity" src="img/postit.jpg" style="width:100%">
+      <img class="mySlides w3-animate-opacity" src="img/dashboard.png" style="width:100%">
+      <img class="mySlides w3-animate-opacity" src="img/profile.png" style="width:100%">
+      <img class="mySlides w3-animate-opacity" src="img/task.png" style="width:100%">
+      <img class="mySlides w3-animate-opacity" src="img/postit.jpg" style="width:100%">
 
-    <a class="w3-btn-floating w3-hover-dark-grey" style="position:absolute;top:45%;left:0;" onclick="plusDivs(-1)">❮</a>
-    <a class="w3-btn-floating w3-hover-dark-grey" style="position:absolute;top:45%;right:0;" onclick="plusDivs(+1)">❯</a>
+      <a class="w3-btn-floating w3-hover-dark-grey" style="position:absolute;top:45%;left:0;" onclick="plusDivs(-1)">❮</a>
+      <a class="w3-btn-floating w3-hover-dark-grey" style="position:absolute;top:45%;right:0;" onclick="plusDivs(+1)">❯</a>
+    </div>
   </div>
 </div>
-
-
-</div>
-
-<script src= "js/scripts.js"></script>
-<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
-<script src= "js/login.js"></script>
+<script src="js/login.js"></script>
 </body>
 <footer class="w3-container w3-black w3-padding-16">
   awesome footer

@@ -5,8 +5,11 @@
 <meta charset="ISO-8859-1" />
 <link rel="stylesheet" href="css/styles.css" >
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-database.js"></script>
 <script src= "js/scripts.js"></script>
-	<title>Workspace</title>
+  <title>Workspace</title>
 </head>
 <header>
 <ul class="nav">
@@ -27,22 +30,21 @@
       <a href="#" class="w3-btn w3-btn-block w3-hover-blue-grey w3-padding-16">Alerts</a>
       <a href="#work" class="w3-btn w3-btn-block w3-hover-teal w3-padding-16">My dashboard</a>
       <a href="#work" class="w3-btn w3-btn-block w3-hover-dark-grey w3-padding-16">options</a>
-      <a href="index.html" class="w3-btn w3-blue w3-btn-block w3-hover-dark-blue w3-padding-16">Log out</a>
+      <a id="btnLogOut" class="w3-btn w3-blue w3-btn-block w3-hover-dark-blue w3-padding-16">Log out</a>
     </div>
   </div>
   <div class="w3-half w3-blue-grey w3-container" style="height:700px">
-    <div class="w3-padding-64 w3-center">
-      <h1>About Me</h1>
+    <div class="w3-padding-64 w3-center" id="users">
+      <h1 id="name">About Me</h1>
       <img src="img/img_avatar3.png" class="w3-margin w3-circle" alt="Person" style="width:50%">
       <div class="w3-left-align w3-padding-xxlarge">
-        <p>Lorem ipusm sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-        <p>Lorem ipusm sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+        <p id="email">Email.</p>
+
       </div>
     </div>
   </div>
 </div>
-
-
+<script type="text/javascript" src="js/logout.js"></script>
 
 </body>
 
