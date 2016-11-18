@@ -19,6 +19,7 @@ var noteDate;
 var userId;
 var userTask;
 var setTasks;
+var idTask;
 var firebaseRef;
 
 const save = document.getElementById('btnSave');
@@ -56,6 +57,8 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 				titulo = subSnap.child('title').val();
 				desc = subSnap.child('description').val();
 				fecha = subSnap.child('date').val();
+				idTask = subSnap.key;
+
 				console.log(titulo);
 				console.log(desc);
 				console.log(fecha);
@@ -63,18 +66,15 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 				noteTitle = document.getElementById('noteTitle');
 				noteDescription = document.getElementById('noteDescription');
 				noteDate = document.getElementById('noteDate');
-
-				/*noteTitle.innerText = titulo;
-				noteDescription.innerText = desc;
-				noteDate.innerText = fecha;
-				console.log("este es el noteTitle:"+noteTitle.innerText);*/
-
+				noteId = document.getElementById('noteId');
+		
 				document.getElementById('Canvas').innerHTML += '<div class="w3-container w3-content w3-left w3-padding-64">'
 																+'<div class="w3-card-4 w3-container note">'
 																    +'<h2 id="noteTitle">'+titulo+'</h2>'
 																    +'<ul class="w3-ul w3-margin-bottom note">'
 																      +'<li id="noteDescription">Description:'+desc +' </li>'
-																     +' <li id="noteDate">Date:'+fecha+'</li>'
+																      +'<li id="noteDate">Date:'+fecha+'</li>'
+																      +'<li id="noteId" class="hide">ID Task:'+idTask+'</li>'
 																   +' </ul>'
 																   +' <button type="button" class="cancelbtn" id="btnDelete">Delete</button>'
 																  +'</div>'
