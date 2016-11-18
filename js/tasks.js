@@ -62,21 +62,15 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 				console.log(titulo);
 				console.log(desc);
 				console.log(fecha);
-
-				noteTitle = document.getElementById('noteTitle');
-				noteDescription = document.getElementById('noteDescription');
-				noteDate = document.getElementById('noteDate');
-				noteId = document.getElementById('noteId');
 		
-				document.getElementById('Canvas').innerHTML += '<div class="w3-container w3-content w3-left w3-padding-64">'
+				document.getElementById('Canvas').innerHTML += '<div class="w3-container w3-content w3-left w3-padding-64" id="'+idTask+'">'
 																+'<div class="w3-card-4 w3-container note">'
 																    +'<h2 id="noteTitle">'+titulo+'</h2>'
 																    +'<ul class="w3-ul w3-margin-bottom note">'
 																      +'<li id="noteDescription">Description:'+desc +' </li>'
 																      +'<li id="noteDate">Date:'+fecha+'</li>'
-																      +'<li id="noteId" class="hide">ID Task:'+idTask+'</li>'
 																   +' </ul>'
-																   +' <button type="button" class="cancelbtn" id="btnDelete">Delete</button>'
+																   +' <button type="button" class="cancelbtn" onclick="deletenote('+"'"+idTask+"'"+')" >Delete</button>'
 																  +'</div>'
 																+'</div>';
 
@@ -93,3 +87,15 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 		console.log('Not Logged in');
 	}
 });
+
+
+function deletenote(id) {
+    
+	console.log("entre al delete")
+	var parent = document.getElementById("Canvas");
+	var child = document.getElementById(id);
+	parent.removeChild(child);	
+	
+
+                  // The function returns the product of p1 and p2
+};
