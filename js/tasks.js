@@ -21,6 +21,8 @@ var userTask;
 var setTasks;
 var idTask;
 var firebaseRef;
+var Xpos;
+var Ypos;
 
 const save = document.getElementById('btnSave');
 
@@ -35,7 +37,9 @@ save.addEventListener('click', e =>{
 	firebaseRef.push({
 		title:title,
 		description:description,
-		date:date
+		date:date,
+		x:70,
+		y:70
 	});
 	console.log(title);
 	console.log(description);
@@ -50,7 +54,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 
 		
 		var firebaseHName = firebase.database().ref('Users').child(userId).child('tasks');
-		firebaseHName.on('value', function(datasnapshot){
+		firebaseHName.once('value').then(function(datasnapshot){
 			datasnapshot.forEach(function (subSnap){
 				subSnap.key;
 				console.log(subSnap.key);
@@ -58,22 +62,26 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 				titulo = subSnap.child('title').val();
 				desc = subSnap.child('description').val();
 				fecha = subSnap.child('date').val();
+				Xpos = subSnap.child('x').val();
+				Ypos = subSnap.child('y').val();
+
 				idTask = subSnap.key;
 
 				console.log(titulo);
 				console.log(desc);
 				console.log(fecha);
 		
-				document.getElementById('Canvas').innerHTML += '<div class="w3-container w3-content w3-left w3-padding-64" id="'+idTask+'">'
-																+'<div class="w3-card-4 w3-container note">'
-																    +'<h2 id="noteTitle">'+titulo+'</h2>'
+				document.getElementById('Canvas').innerHTML +=   	'<div class="w3-card-4 w3-container note w3-padding-64"id="'+idTask+'"ondblclick="editnote('+"'"+idTask+"'"+
+																	')"draggable="true" ondrag="move(this)" style=" position: absolute; left:'+Xpos+'px; top:'+Ypos+'px;" >'
+																    +'<h2>'+titulo+'</h2>'
 																    +'<ul class="w3-ul w3-margin-bottom note">'
-																      +'<li id="noteDescription">Description:'+desc +' </li>'
-																      +'<li id="noteDate">Date:'+fecha+'</li>'
+																      +'<li></li>'
+																      +'<li>Description:'+desc +' </li>'
+																      +'<li>Date:'+fecha+'</li>'
+																      +'<li></li>'
 																   +' </ul>'
 																   +' <button type="button" class="cancelbtn" onclick="deletenote('+"'"+idTask+"'"+')" >Delete</button>'
-																  +'</div>'
-																+'</div>';
+																  +'</div>';
 
 
 
@@ -101,3 +109,53 @@ function deletenote(id) {
 	var firebaseTasks = firebase.database().ref('Users').child(userId).child('tasks').child(id);
 	firebaseTasks.remove();
 };
+
+function editnote(id){
+
+ console.log(id);
+ document.getElementById("id02").style.display="block";
+ firebase.database().ref('Users').child(userId).child('tasks').child(id).once('value').then(function(snapshot) {	
+ document.getElementById('tTitle').value= snapshot.child('title').val();
+ document.getElementById('tDescription').value=snapshot.child('description').val();
+ document.getElementById('tDate').value=snapshot.child('date').val();
+ document.getElementById("btnEdit").setAttribute("onclick", "editbase('"+id+"')");
+ });
+};
+
+function editbase(id){
+	firebaseRef = firebase.database().ref('Users/'+userId).child('tasks').child(id);
+	title = document.getElementById('tTitle').value;
+	description = document.getElementById('tDescription').value;
+	date = document.getElementById('tDate').value;
+	firebaseRef.update({
+		title:title,
+		description:description,
+		date:date
+	});
+
+};
+
+var dragX,dragY;
+
+document.addEventListener("dragover", function(e){
+    e = e || window.event;
+    dragX = e.pageX, dragY = e.pageY;
+
+    console.log("X: "+dragX+" Y: "+dragY);
+}, false);
+
+function move(note){
+
+	firebaseRef = firebase.database().ref('Users/'+userId).child('tasks').child(note.getAttribute('id'));
+	firebaseRef.update({
+		x:dragX,
+		y:dragY,
+	});
+	note.style.left = dragX + "px";
+	note.style.top = dragY + "px";
+
+
+
+
+}
+

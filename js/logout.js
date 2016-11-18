@@ -15,6 +15,7 @@ var userObject;
 const logout = document.getElementById('btnLogOut');
 
 logout.addEventListener('click', e => {
+  window.location = "index.html";
   firebase.auth().signOut();
 });
 

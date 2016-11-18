@@ -46,16 +46,48 @@
   </div>
   <div class="w3-group">
     <label class="w3-label">Date</label>
-    <input class="w3-input" type="text" id="uDate" required>
+    <input class="w3-input" type="date" id="uDate" required>
   </div>
 
  </div>
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <button type="button" class="signinbtn" id="btnSave">Save</button>
+      <button type="submit" class="signinbtn" id="btnSave">Save</button>
     </div>
   </form>
   <script type="text/javascript" src="js/tasks.js" ></script>
+</div>
+
+<div id="id02" class="modal w3-card-6">
+  
+  <form class="modal-content animate" action="dashboard.html">
+  <div class="w3-container">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+     
+    </div>
+  </div>  
+  <div class="w3-container">  
+    <div class="w3-group">
+    <label class="w3-label w3-validate">Title</label>
+    <input class="w3-input" type="text" id="tTitle" required>
+  </div>
+  <div class="w3-group">
+    <label class="w3-label w3-validate">Description</label>
+    <input class="w3-input" type="text" id="tDescription" required>
+  </div>
+  <div class="w3-group">
+    <label class="w3-label">Date</label>
+    <input class="w3-input" type="date" id="tDate" required>
+  </div>
+
+ </div>
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+      <button type="submit" class="signinbtn" id="btnEdit">Change</button>
+    </div>
+  </form>
+  
 </div>
 
 </body>

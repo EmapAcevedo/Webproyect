@@ -55,7 +55,7 @@ function signin(){
       if(firebaseUser){
         const userId = firebaseUser.uid;
         console.log(userId);
-
+          window.location = "dashboard.html";
           firebase.database().ref('Users/'+userId).set({
             username:name ,
             email: email,
