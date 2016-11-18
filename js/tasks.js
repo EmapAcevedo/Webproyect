@@ -71,7 +71,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 				console.log(desc);
 				console.log(fecha);
 		
-				document.getElementById('Canvas').innerHTML +=   	'<div class="w3-card-4 w3-container note w3-padding-64"id="'+idTask+'"ondblclick="editnote('+"'"+idTask+"'"+
+				document.getElementById('Canvas').innerHTML +=   	'<div class="w3-card-4 w3-container note"id="'+idTask+'"ondblclick="editnote('+"'"+idTask+"'"+
 																	')"draggable="true" ondrag="move(this)" style=" position: absolute; left:'+Xpos+'px; top:'+Ypos+'px;" >'
 																    +'<h2>'+titulo+'</h2>'
 																    +'<ul class="w3-ul w3-margin-bottom note">'
