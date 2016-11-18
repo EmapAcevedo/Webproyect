@@ -24,6 +24,7 @@ var firebaseRef;
 
 const save = document.getElementById('btnSave');
 
+
 save.addEventListener('click', e =>{
 	
 	firebaseRef = firebase.database().ref('Users/'+userId).child('tasks');
@@ -95,7 +96,8 @@ function deletenote(id) {
 	var parent = document.getElementById("Canvas");
 	var child = document.getElementById(id);
 	parent.removeChild(child);	
-	
 
-                  // The function returns the product of p1 and p2
+	console.log("child:"+id);
+	var firebaseTasks = firebase.database().ref('Users').child(userId).child('tasks').child(id);
+	firebaseTasks.remove();
 };
